@@ -37,6 +37,7 @@ public class JazzSongs {
 	names.add("God Bless the Child");
 	names.add("How High the Moon");
 	names.add("Mack the Knife (in Berlin)");
+	names.add("At Last");
 	for (int i = 0; i < names.size(); i+=2) {
 	    System.out.format("%s <=> %s\n",
 			      names.get(i),
