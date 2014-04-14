@@ -31,11 +31,27 @@ public class Reverser {
 	return s.empty();
     }
 
+    public static void reverseStack(Stack<String> s) {
+	LinkedList<String> q = new LinkedList<String>();
+	while (!s.empty()) {
+	    q.addLast(s.pop());
+	}
+	while (!q.isEmpty()) {
+	    s.push(q.removeFirst());
+	}
+    }
+
     public static void printStack(Stack<String> s) {
+	Stack<String> temp = new Stack<String>();
 	String string;
 	while (!s.empty()) {
 	    string = s.pop();
+	    temp.push(string);
 	    System.out.println(string);
+	}
+	while (!temp.empty()) {
+	    string = temp.pop();
+	    s.push(string);
 	}
     }
 
@@ -63,14 +79,8 @@ public class Reverser {
 	s.push("catie");
 	s.push("risako");
 	s.push("josh");
-	// printStack(s);
-	LinkedList<String> q = new LinkedList<String>();
-	while (!s.empty()) {
-	    q.addLast(s.pop());
-	}
-	while (!q.isEmpty()) {
-	    s.push(q.removeFirst());
-	}
+	printStack(s);
+	reverseStack(s);
 	printStack(s);
 	
     }
